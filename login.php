@@ -1,8 +1,17 @@
 <?php 
     //Включаем нашу базу данных и запускаем сессию
     require 'db.php';
-    session_start();
+    
     $error = '';
+
+    //Проверяем не активна ли сейчас сессия
+    if (!empty($_SESSION['user_id'])) {
+        header('Location: orders.php');
+        exit;
+    }
+    else{
+        session_start();
+    }
 
     // Проверям сервер на отправку данных
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -71,5 +80,6 @@
     <p class="text-center mt-3" style="font-size:13px; color:#6C757D;">
         Ещё не зарегистрированы? <a href="register.php" class="text-success fw-semibold text-decoration-none">Регистрация</a>
     </p>
-</div></body>
+</div>
+</body>
 </html>

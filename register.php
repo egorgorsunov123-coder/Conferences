@@ -1,62 +1,70 @@
 <?php
-require 'db.php';
-$errors = [];
-$ok = false;
+    require 'db.php';
+    $errors = [];
+    $ok = false;
 
-// $_SERVER['REQUEST_METHOD'] == 'POST' значит форму отправили
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($_POST['action'] === 'register'){
-            // trim убирает лишние пробелы по краям
-        $login = trim($_POST['login'] ?? '');
-        $pass  = $_POST['password'] ?? '';
-        $fio   = trim($_POST['fio'] ?? '');
-        $phone = trim($_POST['phone'] ?? '');
-        $email = trim($_POST['email'] ?? '');
+//Проверяем не активна ли сейчас сессия
+    if (!empty($_SESSION['user_id'])) {
+        header('Location: orders.php');
+        exit;
+    }
+    else{
+        session_start();
+    }
+    // $_SERVER['REQUEST_METHOD'] == 'POST' значит форму отправили
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_POST['action'] === 'register'){
+                // trim убирает лишние пробелы по краям
+            $login = trim($_POST['login'] ?? '');
+            $pass  = $_POST['password'] ?? '';
+            $fio   = trim($_POST['fio'] ?? '');
+            $phone = trim($_POST['phone'] ?? '');
+            $email = trim($_POST['email'] ?? '');
 
-        // ВАЛИДАЦИЯ
-        if (!preg_match('/^[a-zA-Z0-9]{6,}$/', $login)) {
-            $errors[] = 'Логин: только латиница и цифры, минимум 6 символов.';
-        }
-        if (mb_strlen($pass) < 8) {
-            $errors[] = 'Пароль: минимум 8 символов.';
-        }
-        if (!preg_match('/^[А-Яа-яЁё\s]+$/u', $fio)) {
-            $errors[] = 'ФИО: только кириллица и пробелы.';
-        }
-        if (!preg_match('/^8\(\d{3}\)\d{3}-\d{2}-\d{2}$/', $phone)) {
-            $errors[] = 'Телефон в формате 8(XXX)XXX-XX-XX.';
-        }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'Некорректный email.';
-        }
+            // ВАЛИДАЦИЯ
+            if (!preg_match('/^[a-zA-Z0-9]{6,}$/', $login)) {
+                $errors[] = 'Логин: только латиница и цифры, минимум 6 символов.';
+            }
+            if (mb_strlen($pass) < 8) {
+                $errors[] = 'Пароль: минимум 8 символов.';
+            }
+            if (!preg_match('/^[А-Яа-яЁё\s]+$/u', $fio)) {
+                $errors[] = 'ФИО: только кириллица и пробелы.';
+            }
+            if (!preg_match('/^8\(\d{3}\)\d{3}-\d{2}-\d{2}$/', $phone)) {
+                $errors[] = 'Телефон в формате 8(XXX)XXX-XX-XX.';
+            }
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = 'Некорректный email.';
+            }
 
-        // Проверяем, что логин уникальный
-        if (empty($errors)) {
-            $stmt = $pdo->prepare('SELECT id FROM users WHERE login = ?');
-            $stmt->execute([$login]);
-            if ($stmt->fetch()) {
-                $errors[] = 'Такой логин уже занят.';
+            // Проверяем, что логин уникальный
+            if (empty($errors)) {
+                $stmt = $pdo->prepare('SELECT id FROM users WHERE login = ?');
+                $stmt->execute([$login]);
+                if ($stmt->fetch()) {
+                    $errors[] = 'Такой логин уже занят.';
+                }
+            }
+
+            // Если ошибок нет — записываем в БД
+            if (empty($errors)) {
+                $hash = password_hash($pass, PASSWORD_DEFAULT);
+                $stmt = $pdo->prepare(
+                    'INSERT INTO users (login, password, fio, phone, email, role)
+                    VALUES (?, ?, ?, ?, ?, "user")'
+                );
+                $stmt->execute([$login, $hash, $fio, $phone, $email]);
+                $ok = true;
             }
         }
-
-        // Если ошибок нет — записываем в БД
-        if (empty($errors)) {
-            $hash = password_hash($pass, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare(
-                'INSERT INTO users (login, password, fio, phone, email, role)
-                VALUES (?, ?, ?, ?, ?, "user")'
-            );
-            $stmt->execute([$login, $hash, $fio, $phone, $email]);
-            $ok = true;
+        else if ($_POST['login'] === 'register'){
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['fio']     = $user['fio'];
+            $_SESSION['role']    = $user['role'];
+            header('Location: ' . ($user['role'] === 'admin' ? 'admin.php' : 'cabinet.php'));
         }
     }
-    else if ($_POST['login'] === 'register'){
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['fio']     = $user['fio'];
-        $_SESSION['role']    = $user['role'];
-        header('Location: ' . ($user['role'] === 'admin' ? 'admin.php' : 'cabinet.php'));
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
