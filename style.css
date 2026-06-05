@@ -109,3 +109,10 @@ h3 { font-size: 18px !important; font-weight: 600 !important; }
     display: flex; align-items: center; justify-content: center;
     font-size: 22px; font-weight: 700;
 }
+
+/* КАРУСЕЛЬ */
+.carousel-img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
