@@ -29,7 +29,7 @@
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['fio'] = $user['fio'];
             $_SESSION['role'] = $user['role'];
-            header('Location: Orders.php');  // перенаправляем
+            header('Location: ' . ($user['role'] === 'admin' ? 'admin.php' : 'orders.php')); // перенаправляем
             exit;
     } else {
         $error = 'Неверный логин или пароль.';

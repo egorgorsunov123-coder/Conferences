@@ -91,7 +91,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
         <a class="navbar-brand" href="cabinet.php">КОНФЕРЕНЦИИ.РФ</a>
         <div class="d-flex align-items-center gap-3">
             <span class="navbar-text"><?= htmlspecialchars($user['fio']) ?></span>
-            <a href="order.php" class="btn btn-brand-green btn-sm fw-semibold">+ Новая заявка</a>
+            <a href="new_order.php" class="btn btn-brand-green btn-sm fw-semibold">+ Новая заявка</a>
             <a href="logout.php" class="btn btn-sm btn-outline-secondary text-white border-secondary">Выйти</a>
         </div>
     </div>
@@ -171,7 +171,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
                 <div style="font-size:3rem; opacity:.4;">📋</div>
                 <h3 class="mt-3">Заявок пока нет</h3>
                 <p class="text-muted" style="font-size:14px;">Создайте первую заявку, чтобы забронировать помещение</p>
-                <a href="order.php" class="btn btn-brand-green mt-2 fw-semibold">Создать заявку</a>
+                <a href="new_order.php" class="btn btn-brand-green mt-2 fw-semibold">Создать заявку</a>
             </div>
         </div>
     <?php else: ?>
