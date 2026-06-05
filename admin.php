@@ -84,7 +84,13 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
 
 <nav class="navbar site-navbar shadow-sm">
     <div class="container-fluid px-4">
-        <a class="navbar-brand" href="admin.php">КОНФЕРЕНЦИИ.РФ <span style="font-size:11px; color:#6C757D; font-weight:400;">Admin</span></a>
+    
+        <div class="">
+            <img src="images/icon3.png" class="iconImg">
+            <a class="navbar-brand" href="admin.php">КОНФЕРЕНЦИИ.РФ <span style="font-size:11px; color:#6C757D; font-weight:400;">Admin</span></a>
+        </div>
+
+
         <div class="d-flex align-items-center gap-3">
             <span class="navbar-text"><?= htmlspecialchars($_SESSION['fio']) ?></span>
             <a href="logout.php" class="btn btn-sm btn-outline-secondary text-white border-secondary">Выйти</a>

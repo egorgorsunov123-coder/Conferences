@@ -80,7 +80,10 @@
 <body>
 <nav class="navbar site-navbar shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="login.php">КОНФЕРЕНЦИИ.РФ</a>
+        <div class="">
+            <img src="images/icon3.png" class="iconImg">
+            <a class="navbar-brand" href="login.php">КОНФЕРЕНЦИИ.РФ</a>
+        </div>
     </div>
 </nav>
 

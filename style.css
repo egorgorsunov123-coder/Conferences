@@ -57,6 +57,12 @@ h3 { font-size: 18px !important; font-weight: 600 !important; }
 .site-navbar .nav-link:hover { color: #fff !important; }
 .site-navbar .nav-link.active { color: #fff !important; font-weight: 600; }
 
+.iconImg{
+    height: 4%;
+    width: 4%;
+    color: white;
+}
+
 /* КАРТОЧКИ */
 .card { border: 1px solid #CED4DA; box-shadow: 0 2px 12px rgba(52,58,64,.08); }
 .card-header-dark {

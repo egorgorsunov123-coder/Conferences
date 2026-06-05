@@ -169,7 +169,10 @@ $minDate = date('Y-m-d');
 
 <nav class="navbar site-navbar shadow-sm">
     <div class="container-fluid px-4">
-        <a class="navbar-brand" href="orders.php">КОНФЕРЕНЦИИ.РФ</a>
+        <div class="">
+            <img src="images/icon3.png" class="iconImg">
+            <a class="navbar-brand" href="orders.php">КОНФЕРЕНЦИИ.РФ</a>
+        </div>
         <div class="d-flex align-items-center gap-3">
             <span class="navbar-text"><?= htmlspecialchars($_SESSION['fio']) ?></span>
             <a href="orders.php" class="btn btn-sm btn-outline-secondary text-white border-secondary">Кабинет</a>

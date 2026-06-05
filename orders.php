@@ -89,7 +89,10 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
 
 <nav class="navbar site-navbar shadow-sm">
     <div class="container-fluid px-4">
-        <a class="navbar-brand" href="orders.php">КОНФЕРЕНЦИИ.РФ</a>
+        <div class="">
+            <img src="images/icon3.png" class="iconImg">
+            <a class="navbar-brand" href="orders.php">КОНФЕРЕНЦИИ.РФ</a>
+        </div>
         <div class="d-flex align-items-center gap-3">
             <span class="navbar-text"><?= htmlspecialchars($user['fio']) ?></span>
             <a href="new_order.php" class="btn btn-brand-green btn-sm fw-semibold">+ Новая заявка</a>
