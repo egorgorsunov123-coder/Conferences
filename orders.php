@@ -83,11 +83,12 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
     <title>Личный кабинет - Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
     <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
 <body>
 
-<nav class="navbar site-navbar shadow-sm">
+<nav class="navbar site-navbar shadow-sm animate__animated animate__fadeInDown">
     <div class="container-fluid px-4">
         <div class="">
             <img src="images/icon3.png" class="iconImg">
@@ -110,7 +111,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
     </div>
 
     <!-- ПРОФИЛЬ -->
-    <div class="card mb-4">
+    <div class="card mb-4 animate__animated animate__fadeInUp">
         <div class="card-body">
             <div class="d-flex align-items-center gap-3">
                 <div class="profile-avatar"><?= mb_strtoupper(mb_substr($user['fio'], 0, 1)) ?></div>
@@ -131,8 +132,8 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
     </div>
 
     <!-- СТАТИСТИКА -->
-    <div class="row g-3 mb-4">
-        <div class="col-12 col-sm-4">
+    <div class="row g-3 mb-4 animate__animated animate__fadeInUp">
+        <div class="col-12 col-sm-4 animate__animated animate__zoomIn">
             <div class="card stat-card h-100">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Всего заявок</div>
@@ -140,7 +141,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-4 animate__animated animate__zoomIn animate__delay-1s">
             <div class="card stat-card h-100">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Завершённых</div>
@@ -148,7 +149,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-4 animate__animated animate__zoomIn animate__delay-2s">
             <div class="card stat-card h-100">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Средняя оценка</div>
@@ -170,7 +171,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
     <h2 class="mb-3">История заявок</h2>
 
     <?php if (empty($orders)): ?>
-        <div class="card text-center py-5">
+        <div class="card text-center py-5 animate__animated animate__fadeInUp">
             <div class="card-body">
                 <div style="font-size:3rem; opacity:.4;">📋</div>
                 <h3 class="mt-3">Заявок пока нет</h3>
@@ -179,7 +180,7 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
             </div>
         </div>
     <?php else: ?>
-        <div class="card p-0 overflow-hidden">
+        <div class="card p-0 overflow-hidden animate__animated animate__fadeInUp">
             <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead>

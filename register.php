@@ -74,6 +74,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Регистрация - Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css"> <!-- Bootstrap -->
+    <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
@@ -132,18 +133,20 @@
 
 <div class="container" style="max-width:460px; margin-top:48px; margin-bottom:60px;">
     <div class="text-center mb-4">
-        <h1>Регистрация</h1>
-        <p class="text-muted" style="font-size:14px;">Создайте аккаунт для бронирования</p>
+        <h1 class="animate__animated animate__fadeInDown">Регистрация</h1>
+        <p class="text-muted animate__animated animate__fadeIn animate__delay-1s" style="font-size:14px;">
+            Создайте аккаунт для бронирования
+        </p>
     </div>
 
-    <div class="card p-4">
+    <div class="card p-4 animate__animated animate__fadeInUp">
         <?php if ($ok): ?>
             <div class="alert alert-success" method="post">
                 Аккаунт создан! <a href="orders.php" class="fw-semibold" name="action" value="login">Войти</a>
             </div>
         <?php else: ?>
             <?php foreach ($errors as $e): ?>
-                <div class="alert alert-danger py-2"><?= htmlspecialchars($e) ?></div>
+                <div class="alert alert-danger py-2 animate__animated animate__shakeX"><?= htmlspecialchars($e) ?></div>
             <?php endforeach; ?>
 
             <form method="post">
@@ -172,7 +175,8 @@
         <?php endif; ?>
     </div>
 
-    <p class="text-center mt-3" style="font-size:13px; color:#6C757D;">
+    <p class="text-center mt-3 animate__animated animate__fadeInUp animate__delay-1s"
+        style="font-size:13px; color:#6C757D;">
         Уже зарегистрированы? <a href="login.php" class="text-success fw-semibold text-decoration-none">Войти</a>
     </p>
 </div>

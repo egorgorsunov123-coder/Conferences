@@ -36,7 +36,6 @@
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -44,6 +43,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Вход-Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
@@ -101,12 +101,14 @@
 
 <div class="container" style="max-width:420px; margin-top:60px;">
     <div class="text-center">
-        <h1>Вход</h1>
-        <p class="text-muted" style="font-size:14px;">Войдите в личный кабинет</p>
+        <h1 class="animate__animated animate__fadeInDown">Вход</h1>
+        <p class="text-muted animate__animated animate__fadeIn animate__delay-1s" style="font-size:14px;">
+            Войдите в личный кабинет
+        </p>
     </div>
 
-    <div class="card p-4">
-        <?php if ($error): ?>
+    <div class="card p-4 animate__animated animate__fadeInUp">
+            <?php if ($error): ?>
             <div class="alert alert-danger py-2"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
 
@@ -123,7 +125,7 @@
         </form>
     </div>
 
-    <p class="text-center mt-3" style="font-size:13px; color:#6C757D;">
+    <p class="text-center mt-3 animate__animated animate__fadeInUp animate__delay-1s" style="font-size:13px; color:#6C757D;">
         Ещё не зарегистрированы? <a href="register.php" class="text-success fw-semibold text-decoration-none">Регистрация</a>
     </p>
 </div>

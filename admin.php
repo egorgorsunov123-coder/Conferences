@@ -78,11 +78,12 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
     <title>Панель администратора — Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
     <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
 <body>
 
-<nav class="navbar site-navbar shadow-sm">
+<nav class="navbar site-navbar shadow-sm animate__animated animate__fadeInDown">
     <div class="container-fluid px-4">
     
         <div class="">
@@ -106,8 +107,8 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
     </div>
 
     <!-- СТАТИСТИКА -->
-    <div class="row g-3 mb-4">
-        <div class="col-6 col-sm-3">
+        <div class="row g-3 mb-4 animate__animated animate__fadeInUp">
+        <div class="col-6 col-sm-3 animate__animated animate__zoomIn">
             <div class="card stat-card h-100">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Всего заявок</div>
@@ -115,7 +116,7 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-3">
+        <div class="col-6 col-sm-3 animate__animated animate__zoomIn animate__delay-1s">
             <div class="card stat-card h-100" style="border-top-color:#1565C0!important;">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Новых</div>
@@ -123,7 +124,7 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-3">
+        <div class="col-6 col-sm-3 animate__animated animate__zoomIn animate__delay-2s">
             <div class="card stat-card h-100" style="border-top-color:#6A1B9A!important;">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Запланировано</div>
@@ -131,7 +132,7 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-3">
+        <div class="col-6 col-sm-3 animate__animated animate__zoomIn animate__delay-3s">
             <div class="card stat-card h-100">
                 <div class="card-body">
                     <div class="text-small text-muted text-uppercase mb-2" style="letter-spacing:.06em;">Завершено</div>
@@ -189,7 +190,7 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
     </div>
 
     <!-- ТАБЛИЦА ЗАЯВОК -->
-    <div class="card p-0 overflow-hidden">
+    <div class="card p-0 overflow-hidden animate__animated animate__fadeInUp">
         <?php if (empty($orders)): ?>
             <div class="text-center py-5 text-muted">
                 <div style="font-size:2.5rem; opacity:.4;">🔍</div>
