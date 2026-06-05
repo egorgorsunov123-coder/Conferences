@@ -33,31 +33,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Вход</title>
+    <title>Вход-Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container" style="max-width:380px; margin-top:60px;">
-    <h1 class="h3 mb-4 text-center">Вход</h1>
+<nav class="navbar site-navbar shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="login.php">КОНФЕРЕНЦИИ.РФ</a>
+    </div>
+</nav>
 
-    <?php if ($error): ?>
-        <div class="alert alert-danger py-1"><?= htmlspecialchars($error) ?></div>
-    <?php endif; ?>
+<div class="container" style="max-width:420px; margin-top:60px;">
+    <div class="text-center mb-4">
+        <h1>Вход</h1>
+        <p class="text-muted" style="font-size:14px;">Войдите в личный кабинет</p>
+    </div>
 
-    <form method="post">
-        <div class="mb-2">
-            <label class="form-label">Логин</label>
-            <input name="login" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Пароль</label>
-            <input type="password" name="password" class="form-control" required>
-        </div>
-        <button class="btn btn-success w-100">Войти</button>
-    </form>
+    <div class="card p-4">
+        <?php if ($error): ?>
+            <div class="alert alert-danger py-2"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
 
-    <p class="mt-3 text-center">Еще не зарегистрированы? <a href="register.php">Регистрация</a></p>
-</div>
-</body>
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Логин</label>
+                <input name="login" class="form-control" placeholder="Введите логин" required>
+            </div>
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Пароль</label>
+                <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
+            </div>
+            <button class="btn btn-brand-green w-100 fw-semibold">Войти</button>
+        </form>
+    </div>
+
+    <p class="text-center mt-3" style="font-size:13px; color:#6C757D;">
+        Ещё не зарегистрированы? <a href="register.php" class="text-success fw-semibold text-decoration-none">Регистрация</a>
+    </p>
+</div></body>
 </html>
