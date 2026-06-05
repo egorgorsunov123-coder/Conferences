@@ -75,6 +75,7 @@
     <title>Регистрация - Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css"> <!-- Bootstrap -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
 <body>
 <nav class="navbar site-navbar shadow-sm">

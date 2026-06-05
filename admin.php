@@ -78,6 +78,7 @@ $nextLabel    = ['New' => 'Назначить', 'Scheduled' => 'Завершит
     <title>Панель администратора — Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
 <body>
 

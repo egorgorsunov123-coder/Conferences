@@ -83,12 +83,13 @@ $statusLabels = ['New' => 'Новая', 'Scheduled' => 'Запланирован
     <title>Личный кабинет - Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
 <body>
 
 <nav class="navbar site-navbar shadow-sm">
     <div class="container-fluid px-4">
-        <a class="navbar-brand" href="cabinet.php">КОНФЕРЕНЦИИ.РФ</a>
+        <a class="navbar-brand" href="orders.php">КОНФЕРЕНЦИИ.РФ</a>
         <div class="d-flex align-items-center gap-3">
             <span class="navbar-text"><?= htmlspecialchars($user['fio']) ?></span>
             <a href="new_order.php" class="btn btn-brand-green btn-sm fw-semibold">+ Новая заявка</a>

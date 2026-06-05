@@ -43,6 +43,7 @@ $minDate = date('Y-m-d');
     <title>Новая заявка — Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.jpg" type="jpg">
     <style>
         /* ── КАРТОЧКИ ПОМЕЩЕНИЙ С ФОНОВЫМ ИЗОБРАЖЕНИЕМ ── */
         .room-card {

@@ -45,6 +45,7 @@
     <title>Вход-Конференции.РФ</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.jpg" type="jpg">
 </head>
 <body>
 <nav class="navbar site-navbar shadow-sm">

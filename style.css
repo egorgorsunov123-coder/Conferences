@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto/static/Roboto-Italic.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
 /*КАСТОМНЫЕ ПЕРЕМЕННЫЕ*/
 :root {
     --bs-body-font-family: 'Roboto', sans-serif;
